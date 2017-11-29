@@ -68,6 +68,6 @@ class AppController extends Controller
 
     public function http_test()
     {
-        $this->http_output->end(1123);
+        $this->http_output->end("哈哈");
     }
 }
