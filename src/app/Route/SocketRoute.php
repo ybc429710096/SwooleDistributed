@@ -49,7 +49,7 @@ class SocketRoute implements IRoute
      */
     public function getControllerName()
     {
-        return 'AppController';
+        return 'SocketMessage';
     }
 
     /**
