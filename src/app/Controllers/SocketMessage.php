@@ -31,22 +31,9 @@ class SocketMessage extends Controller
         $this->send("ok.$this->fd");
     }
 
-    public function http_remove()
-    {
-        $sub = $this->http_input->get('sub');
-        $fd = (int)$this->http_input->get('fd');
-        get_instance()->removeSub($sub, $fd);
-        $this->http_output->end("ok");
-    }
-
     public function pub($sub, $data)
     {
         $this->sendPub($sub, $data);
-    }
-
-    public function http_pub()
-    {
-        $this->sendPub('test', 1);
     }
 
     public function sendAll($data)
@@ -62,7 +49,8 @@ class SocketMessage extends Controller
 
     public function onMessage(){
         echo "收到消息";
-        $this->sendToAll(['type' => '消息']);
+        $result = $this->sendToAll(['type' => '消息']);
+        var_dump("发送消息",$result);
         $this->destroy();
     }
 
