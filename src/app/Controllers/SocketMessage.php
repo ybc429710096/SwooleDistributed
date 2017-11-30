@@ -43,7 +43,7 @@ class SocketMessage extends Controller
 
     public function onClose()
     {
-        var_dump('socketclose');
+        var_dump('socketclose,fd'.$this->fd);
         $this->destroy();
     }
 
