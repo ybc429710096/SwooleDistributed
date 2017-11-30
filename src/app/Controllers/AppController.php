@@ -63,6 +63,7 @@ class AppController extends Controller
     public function onMessage($message){
         echo "收到消息";
         var_dump($message);
+        $this->destroy();
     }
 
     public function onConnect()
