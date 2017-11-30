@@ -60,7 +60,7 @@ class AppController extends Controller
         $this->destroy();
     }
 
-    public function message($message){
+    public function message(){
         echo "收到消息";
         var_dump($message);
         $this->destroy();
