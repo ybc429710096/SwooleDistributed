@@ -61,7 +61,7 @@ class NormalRoute implements IRoute
      */
     public function getMethodName()
     {
-        return $this->client_data->type;
+        return $this->client_data->method_name;
     }
 
     public function getPath()
