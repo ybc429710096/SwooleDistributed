@@ -56,13 +56,19 @@ class AppController extends Controller
 
     public function onClose()
     {
-        var_dump('close');
+        var_dump('socketclose');
+        $this->destroy();
+    }
+
+    public function onMessage(){
+        echo "收到消息";
+        $this->sendToAll(['type' => '消息']);
         $this->destroy();
     }
 
     public function onConnect()
     {
-        var_dump('connect');
+        var_dump('socketconnect');
         $this->send(['type' => 'welcome']);
         // $this->destroy();
     }

@@ -1,8 +1,8 @@
 <?php
 /**
- * Created by PhpStorm.
- * User: zhangjincheng
- * Date: 16-7-15
+ * Socket路由
+ * User: ybc
+ * Date: 17-11-30
  * Time: 下午3:11
  */
 
@@ -11,7 +11,7 @@ namespace app\Route;
 use Server\Route\IRoute;
 use Server\CoreBase\SwooleException;
 
-class NormalRoute implements IRoute
+class SocketRoute implements IRoute
 {
     private $client_data;
 
@@ -37,9 +37,6 @@ class NormalRoute implements IRoute
      */
     public function handleClientRequest($request)
     {
-        echo "<pre>";
-        print_r($request);
-        echo '</pre>';
         $this->client_data->path = $request->server['path_info'];
         $route = explode('/', $request->server['path_info']);
         $this->client_data->controller_name = $route[1]??null;
