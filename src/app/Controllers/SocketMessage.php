@@ -56,7 +56,7 @@ class SocketMessage extends Controller
 
     public function onConnect()
     {
-        var_dump('socketconnect');
+        var_dump('socketconnect,fd'.$this->fd);
         $this->send(['type' => 'welcome']);
         // $this->destroy();
     }
