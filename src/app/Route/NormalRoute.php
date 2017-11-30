@@ -9,7 +9,7 @@
 namespace Server\Route;
 
 
-class MyRoute implements IRoute
+class NormalRoute implements IRoute
 {
     private $client_data;
 
