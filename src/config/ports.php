@@ -43,7 +43,8 @@ $config['ports'][] = [
     'pack_tool' => 'NonJsonPack',
     'opcode' => PortManager::WEBSOCKET_OPCODE_TEXT,
     'middlewares' => ['MonitorMiddleware'],
-    'message' => 'onMessage'
+    'message' => 'onMessage',
+    'close'   => 'close'
 ];
 
 return $config;
