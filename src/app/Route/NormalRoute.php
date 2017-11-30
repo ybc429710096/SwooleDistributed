@@ -8,6 +8,8 @@
 
 namespace app\Route;
 
+use Server\Route\IRoute;
+use Server\CoreBase\SwooleException;
 
 class NormalRoute implements IRoute
 {
