@@ -49,7 +49,7 @@ class SocketMessage extends Controller
 
     public function onMessage(){
         echo "收到消息";
-        $result = $this->sendToAll(['type' => '消息']);
+        $result = $this->sendToAll(['type' => '消息','hehe' => '33']);
         var_dump("发送消息",$result);
         $this->destroy();
     }
