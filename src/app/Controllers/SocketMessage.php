@@ -58,7 +58,8 @@ class SocketMessage extends Controller
     {
         var_dump('socketconnect,fd'.$this->fd);
         $uid = time();
-        // $this->bindUid($uid);
+        //必须绑定uid，不绑定收不到群发消息
+        $this->bindUid($uid);
         $this->send(['type' => 'welcome', 'id' => $uid]);
         $this->destroy();
     }
