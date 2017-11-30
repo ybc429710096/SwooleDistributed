@@ -49,7 +49,7 @@ class SocketMessage extends Controller
 
     public function onMessage(){
         echo "收到消息";
-        $result = $this->sendToAll(['type' => '消息','hehe' => '33']);
+        $result = $this->sendToAll(['type' => '消息','id' => $uid,'hehe' => '33']);
         var_dump("发送消息",$result);
         $this->destroy();
     }
@@ -57,8 +57,10 @@ class SocketMessage extends Controller
     public function onConnect()
     {
         var_dump('socketconnect,fd'.$this->fd);
-        $this->send(['type' => 'welcome']);
-        // $this->destroy();
+        $uid = time();
+        $this->bindUid($uid);
+        $this->send(['type' => 'welcome', 'id' => $uid]);
+        $this->destroy();
     }
 
     public function http_test()
