@@ -60,7 +60,7 @@ class AppController extends Controller
         $this->destroy();
     }
 
-    public function message(){
+    public function onMessage(){
         echo "收到消息";
         $this->destroy();
     }
