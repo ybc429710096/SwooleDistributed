@@ -60,6 +60,11 @@ class AppController extends Controller
         $this->destroy();
     }
 
+    public function onMessage($message){
+        echo "收到消息";
+        var_dump($message);
+    }
+
     public function onConnect()
     {
         var_dump('connect');

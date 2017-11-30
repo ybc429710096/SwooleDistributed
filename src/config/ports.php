@@ -42,7 +42,8 @@ $config['ports'][] = [
     'route_tool' => 'NormalRoute',
     'pack_tool' => 'NonJsonPack',
     'opcode' => PortManager::WEBSOCKET_OPCODE_TEXT,
-    'middlewares' => ['MonitorMiddleware']
+    'middlewares' => ['MonitorMiddleware'],
+    'message' => 'onMessage'
 ];
 
 return $config;
