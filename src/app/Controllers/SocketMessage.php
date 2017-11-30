@@ -58,7 +58,7 @@ class SocketMessage extends Controller
     {
         var_dump('socketconnect,fd'.$this->fd);
         $uid = time();
-        $this->bindUid($uid);
+        // $this->bindUid($uid);
         $this->send(['type' => 'welcome', 'id' => $uid]);
         $this->destroy();
     }
