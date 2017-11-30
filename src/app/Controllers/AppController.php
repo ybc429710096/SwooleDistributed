@@ -62,6 +62,7 @@ class AppController extends Controller
 
     public function onMessage(){
         echo "收到消息";
+        $this->send(['type' => '消息']);
         $this->destroy();
     }
 
