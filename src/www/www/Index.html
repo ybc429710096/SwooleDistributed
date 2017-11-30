@@ -21,7 +21,10 @@
     <script type="text/javascript">
         ws = new WebSocket('ws://47.52.248.209:8083');
         ws.onopen = function(){
-            ws.send("22");
+            ws.send(JSON.stringify({
+            type: 'message',
+            message: "哈哈"
+        }));
         };
         ws.onmessage = function (data) {
             // var json = JSON.parse(data.data);
@@ -29,7 +32,7 @@
         };
 
         ws.onclose = function () {
-            console('连接断开');
+            console.log('连接断开');
         };
         ws.onerror = function () {
             console.log('连接服务器错误');

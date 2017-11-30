@@ -60,7 +60,7 @@ class AppController extends Controller
         $this->destroy();
     }
 
-    public function onMessage($message){
+    public function message($message){
         echo "收到消息";
         var_dump($message);
         $this->destroy();
@@ -69,6 +69,7 @@ class AppController extends Controller
     public function onConnect()
     {
         var_dump('connect');
+        $this->send(['type' => 'welcome');
         $this->destroy();
     }
 
