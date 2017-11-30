@@ -22,6 +22,8 @@
         ws = new WebSocket('ws://47.52.248.209:8083');
         ws.onopen = function(){
             ws.send(JSON.stringify({
+            controller_name : 'AppController',
+            method_name : 'message',
             type: 'message',
             message: "哈哈"
         }));
