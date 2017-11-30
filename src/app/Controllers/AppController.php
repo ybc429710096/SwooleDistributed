@@ -69,7 +69,7 @@ class AppController extends Controller
     public function onConnect()
     {
         var_dump('connect');
-        $this->send(['type' => 'welcome');
+        $this->send(['type' => 'welcome']);
         $this->destroy();
     }
 
