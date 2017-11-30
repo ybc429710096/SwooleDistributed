@@ -70,7 +70,7 @@ class AppController extends Controller
     {
         var_dump('connect');
         $this->send(['type' => 'welcome']);
-        $this->destroy();
+        // $this->destroy();
     }
 
     public function http_test()
