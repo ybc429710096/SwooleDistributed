@@ -29,9 +29,6 @@ class NormalRoute implements IRoute
     public function handleClientData($data)
     {
         $this->client_data = $data;
-        echo "<pre>";
-        print_r($data);
-        echo "</pre>";
         if (isset($this->client_data->controller_name) && isset($this->client_data->method_name)) {
             return $this->client_data;
         } else {
